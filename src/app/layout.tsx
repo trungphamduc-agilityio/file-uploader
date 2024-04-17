@@ -67,7 +67,8 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {(process.env.NODE_ENV === "development" || process.env.VERCEL_ENV === "preview") && (
+        {(process.env.NODE_ENV === "development" ||
+          process.env.VERCEL_ENV === "preview") && (
           // eslint-disable-next-line @next/next/no-sync-scripts
           <script
             data-project-id="hLNyQBNcupVWBOBOrdskrpv2OVrdn049SDw6mU6f"
