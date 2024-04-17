@@ -62,26 +62,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - run: cp .env.example .env
+
       - name: Build project
         run: |
-          pnpm build
-
-      - name: Serve project
-        # TODO: Update these commands to serve your app's frontend locally, and
-        # then update the app-url to match.
-        #
-        # Notes:
-        #
-        # 1. Please make sure your serve command listens 0.0.0.0 rather than
-        #    localhost or 127.0.0.1 (i.e. listens to all requests via all network
-        #    interfaces rather than just the loopback interface - see
-        #    https://stackoverflow.com/a/20778887 for more details)
-        # 2. The sleep is often required to ensure your app is readily being served
-        #    by the time the Meticulous tests start
-        run: |
-          cp .env.example .env &
-          pnpm dev &
-          sleep 5
+          pnpm dev
 
       - name: Run Meticulous tests
         uses: alwaysmeticulous/report-diffs-action@v1
